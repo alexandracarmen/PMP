@@ -1,0 +1,50 @@
+1. clasa abstracta Persoana
+
+ abstract class Person(name:String){
+ }
+
+
+2. . Creati o Clasa Student care extinde clasa Persoana si are: nume(String), prenume(String), an(Integer) si o lista de materii (Array[(String, Integer)]) . Fiecare materie este o tupla (String, Integer)
+
+class Persoana{
+ var Name: String = Maria;
+ }
+
+class Student extends Persoana{
+
+  def main(args: Array[String, Integer]) {
+    var nameVar: String;
+    var prenumeVar: String;
+    var anVar: Int;
+}
+}
+
+3. Creati o clasa Profesor care extinde clasa Persoana si are: nume(String), prenume(String), materie: String
+
+class Persoana {
+  var Name: String = Andrei
+  }
+
+ class Profesor extends Persoana {
+   var nume: String;
+   var prenume: String;
+   var materie: String;
+}
+
+
+4. Pentru clasa Student implementati urmatoarele functii:
+
+ setNota(materie: String, nota: Integer)
+
+ getNota(materie:String)
+
+ addMaterie(materie: String, nota: Integer)
+
+
+ class Student{
+
+   def add(materie:String, nota:Integer);
+
+
+
+
