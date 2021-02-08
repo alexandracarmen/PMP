@@ -31,8 +31,8 @@ import com.cra.figaro.algorithm.sampling.Importance
 		val Markov=Element('buna);
 	}
 
-	//pe parcursul iteratiilor, noua valoare Markov va fi interpretata bazanduse de cea anterioara
-	//cu ajutorul valorile de mai joi 
+	//pe parcursul iteratiilor, noua valoare Markov va fi interpretata bazandu-se de cea anterioara
+	//cu ajutorul valorile de mai jos 
 	class NextState(val dictionary: Dictionary, val Markov: Symbol )extends State{
 			Markov = CPD(Markov,
 				'buna -> Select(0.721 -> 'buna, 0.202 -> 'nuPreaBuna, 0.067 -> 'bolnav,0.1->'decedat),
