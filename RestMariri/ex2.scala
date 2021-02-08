@@ -21,15 +21,19 @@ import com.cra.figaro.library.atomic.continuous.Normal
 import com.cra.figaro.algorithm.sampling.Importance
 
 
-object test {
-  def main(args: Array[String]): Unit = {
-    val avg_temperature = Normal(7, 5)
-    val variance = Flip(0.5)
-    variance1 = If(variance, 20, 30)
-    val avg_temp = Normal(7, variance1)
-    //def greaterThan50(d: Double) = d > 50
-    //println(Importance.probability(avg_temperature, greaterThan50 _))
+//2.A
+//temperatura medie are distributia  normala cu media 7 si variatia 5
+val tempMean = Normal(7, 5)
+//variatia poate fi 20 sau 30 cu probabilitatea de 0.5
+	val tempVariance = Select(0.5 -> 20.0, 0.5 -> 30.0)
+	val temperature = Normal(tempMean, tempVariance)
+    println(Importance.probability(temperature, (d: Double) => d < 50&& d>20)
 
-  }
-
-}
+ //2.B   
+ //interogam modelul pentru a afla probabilitatea ca temp sa fie cuprinsa intre 20 si 50
+val temperature = Normal(9, tempVariance)
+    println(Importance.probability(temperature, (d: Double) => d < 50&& d>20)
+    
+//2.C
+tempMean.observe(9)
+	println(Importance.probability(temperature, (d: Double) => d < 50&& d>20)
