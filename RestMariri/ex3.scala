@@ -21,27 +21,6 @@ import com.cra.figaro.library.atomic.continuous.Normal
 import com.cra.figaro.algorithm.sampling.Importance
 
 
-def main(args: Array[String])
-{
-abstract class State(val dictionary: Dictionary){
-		val Markov: Element[Symbol];
-		val stateNumber;
-	}
-
-	class InitialState(val dictionary: Dictionary)extends State{
-		val Markov=Element('buna);
-		val stateNumber=1;
-	}
-
-	class NextState(val dictionary: Dictionary)extends State{
-			Markov(chapter) = CPD(Markov(stateNumber - 1),
-				'buna -> Select(0.721 -> 'buna, 0.202 -> 'nuPreaBuna, 0.067 -> 'bolnav,0.1->'decedat),
-				'nuPreaBuna -> Select(0.581 -> 'nuPreaBuna, 0.407 -> 'bolnav,0.012->'decedat),
-				'bolnav -> Select0(0.075 -> 'bolnav,0.25->'decedat),
-				'decedat -> Select(1->'decedat))
-    }
-}
-
 //clasa State va avea un singur parametru, un Symbol(A,B,C,D <=> 'buna ,'nuPreaBuna ,'bolnav ,'decedat)
 	abstract class State(val dictionary: Dictionary){
 		val Markov: Symbol;
